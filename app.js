@@ -1,17 +1,17 @@
 let screen = document.getElementById("screen");
-buttons = document.querySelectorAll("button");
+let buttons = document.querySelectorAll("button");
 let screenValue = "";
-for (item of buttons) {
+for (let item of buttons) {
   item.addEventListener("click", (e) => {
-    buttonText = e.target.innerText;
+    let buttonText = e.target.innerText;
     console.log("Button text is ", buttonText);
     if (buttonText == "x") {
       buttonText = "*";
       screenValue += buttonText;
       screen.value = screenValue;
     } else if (buttonText == "AC") {
-      screenValue = "0";
-      screen.value = screenValue;
+      screenValue = "";
+      screen.value = 0;
     } else if (buttonText == "=") {
       screen.value = eval(screenValue);
     } else {
